@@ -908,7 +908,8 @@ figure.effect-ming:hover img {
 .gallery-box {
   display: grid;
   grid-template-columns: repeat(4 , 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  /* grid-template-rows: repeat(4, 1fr); */
+  grid-auto-rows: 200px 200px;
   grid-gap: 10px;
   padding: 10px;
   /* grid-template-areas: 
@@ -918,9 +919,28 @@ figure.effect-ming:hover img {
   "img-5 img-6 img-6"; */
 }
 
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-item .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 .img-1 {
-  grid-row: 1/ span 2;
-  grid-column: 1/ span 3;
+  grid-row: span 2;
+  grid-column: span 3;
 }
 
 .img-2 {
@@ -944,67 +964,15 @@ figure.effect-ming:hover img {
 }
 
 .img-6 {
-  grid-row: 3 / span 4;
-  grid-column: 2 / span 4;
+  grid-row: span 2;
+  grid-column: span 3;
 }
-/* .img-1 {
-  grid-area: img-1;
-}
-
-.img-2 {
-  grid-area: img-2;
-}
-
-.img-3 {
-  grid-area: img-3;
-}
-
-.img-4 {
-  grid-area: img-4;
-}
-
-.img-5 {
-  grid-area: img-5;
-}
-
-.img-6 {
-  grid-area: img-6;
-} */
 
 .gallery-box img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-}
-.features .icon-box {
-  display: flex;  
-  align-items: center;
-  padding: 20px;
-  background: #f6f6f6;
-  transition: ease-in-out 0.3s;
-}
-.features .icon-box i {
-  font-size: 32px;
-  padding-right: 10px;
-  line-height: 1;
-}
-.features .icon-box h3 {
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-size: 16px;
-}
-.features .icon-box h3 a {
-  color: #222222;
-  transition: ease-in-out 0.3s;
-}
-.features .icon-box h3 a:hover {
-  color: #3498db;
-}
-.features .icon-box:hover {
-  background: #eef7fc;
 }
 
 /*--------------------------------------------------------------
@@ -1469,6 +1437,22 @@ figure.effect-ming:hover img {
   }
 }
 
+.video-box {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: 10px;
+}
+
+.video-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1498,5 +1482,9 @@ figure.effect-ming:hover img {
 @media screen and (max-width: 600px){
   .grid {
     flex-wrap: wrap;
+  }
+
+  .grid figure {
+    margin: 0 0 15px 22px;
   }
 }
